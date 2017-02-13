@@ -15,7 +15,7 @@
   * of a month of the year using integers.
   */
   
-  public class secondary {
+  public class randMonth {
   public static void main(String[] args) {
   int mon = (int)(((Math.random())*12)+1);
   if (mon == 1)
