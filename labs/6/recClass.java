@@ -15,9 +15,9 @@
 
 * height: double                                 * 
 
-* recClass()                                    *  
+* recClass()                                     *  
 
-* recClass(newWidth: double, newHeight: double) *
+* recClass(newWidth: double, newHeight: double)  *
 
 * getArea(): double                              *
 

@@ -24,7 +24,7 @@
   * locArray
   * 
   * This class allows for the location of the
-  * largest element in an array entered by the
+  * largest element in the array entered by the
   * user.
   */
   
