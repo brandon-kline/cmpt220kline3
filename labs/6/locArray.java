@@ -17,7 +17,7 @@
 
 * +maxValue: double            *
 
-* +Location(array: double[][]) *
+* +locArray(array: double[][]) *
 *******************************/
 
 /**
