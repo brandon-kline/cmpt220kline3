@@ -1,0 +1,19 @@
+48 pts
+
+Brandon,
+
+- Congratulations on coding one-dimensional convolution!
+
+However, 
+
+- You are using tabs! You must use two-space indentation.
+
+- Please read the style guidelines to make sure you understand them. Do not
+  hesitate to ask any questions.
+
+- Please read the assignment instructions carefully.
+
+
+Peace,
+
+- Dr. Rivas
