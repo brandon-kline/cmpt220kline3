@@ -4,7 +4,7 @@
   * course: CMPT 220
   * assignment: Final Project
   * due date: May 4, 2017
-  * version: 1.0A
+  * version: 1.0
   * 
   */
 
@@ -16,7 +16,10 @@
   */
   
 import java.util.Scanner; 
-public class islandEscape {
+public class Loot {
+
+  public static Inventory current_inventory = new Inventory();
+  public static Location current_location = new Location();
   public static void main(String[] args) {
   Scanner input = new Scanner (System.in);
   printCopyright();
@@ -68,6 +71,7 @@ public static void printStory() {
   Scanner input = new Scanner(System.in);
   String userinput = input.nextLine();
   if (userinput.equals( "move forward")){
+    current_location.locnum = 1;
     System.out.println("");
     System.out.println("You walk over to the beach, and can smell the salt of the sea and see");
     System.out.println("a flock of pelicans flying in the distance. You could probably find");
@@ -75,12 +79,14 @@ public static void printStory() {
     }
   String userinput2 = input.nextLine();
   if (userinput2.equals( "search")){
+    current_inventory.machetti.haveItem = true;
     System.out.println("");
     System.out.println("You find an old machetti laying near the water. It might come in handy.");
     System.out.println("What would you like to do?");
     }
   String userinput3 = input.nextLine();
   if (userinput3.equals( "move forward")){
+    current_location.locnum = 1;
     System.out.println("");
     System.out.println("You turn around from the sea to face the rest of the island. There");
     System.out.println("seems to be a small opening in a wall of grassy foilage that obscures");
@@ -88,12 +94,15 @@ public static void printStory() {
     }
   String userinput4 = input.nextLine();
   if (userinput4.equals( "move forward")){
+    current_location.locnum = 2;
     System.out.println("");
     System.out.println("You come to a halt as the leaves of the jungle become denser, so much");
     System.out.println("so that it becomes impossible to move forward. What would you like to do?");
     }
   String userinput5 = input.nextLine();
   if (userinput5.equals( "use machetti")){
+    current_inventory.machetti.usedItem = true;
+    current_location.puz1 = true;
     System.out.println("");
     System.out.println("You cut through the heavy leafage of the jungle and continue to press");
     System.out.println("onward. You break into the interior of the jungle and find massive trees");
@@ -102,6 +111,7 @@ public static void printStory() {
     }
   String userinput6 = input.nextLine();
   if (userinput6.equals( "search")){
+    current_inventory.monacle.haveItem = true;
     System.out.println("");
     System.out.println("You find a monacle and golden chain lying in the dirt. It looks as if");
     System.out.println("someone had dropped it while passing through here. What would you like");
@@ -109,6 +119,7 @@ public static void printStory() {
     }
   String userinput7 = input.nextLine();
   if (userinput7.equals( "move forward")){
+    current_location.locnum = 3;
     System.out.println("");
     System.out.println("You cut down the thick leafage with your newfound machetti. As you");
     System.out.println("progress deeper into the jungle, you come across a rickety rope bridge,");
@@ -116,6 +127,7 @@ public static void printStory() {
     }
   String userinput8 = input.nextLine();
   if (userinput8.equals( "search")){
+    current_inventory.twine.haveItem = true;
     System.out.println("");
     System.out.println("You find some twine curled up around one of the bridge posts and decide");
     System.out.println("to take it. What would you like to do?");
@@ -128,12 +140,15 @@ public static void printStory() {
     }
   String userinput10 = input.nextLine();
   if (userinput10.equals( "use machetti")){
+    current_inventory.twine.usedItem = true;
+    current_location.puz2 = true;
     System.out.println("");
     System.out.println("You tie the loose planks of wood together with the twine and the bridge");
     System.out.println("is soon back in working order. What would you like to do?");
     }
   String userinput11 = input.nextLine();
   if (userinput11.equals( "move forward")){
+    current_location.locnum = 4;
     System.out.print("");
     System.out.println("As you cross the bridge, emerge from the jungle and arrive at the");
     System.out.println("base of the mountain, you notice there is no direct path up to the");
@@ -141,24 +156,30 @@ public static void printStory() {
     }
   String userinput12 = input.nextLine();
   if (userinput12.equals( "search")){
+    current_inventory.c_gear.haveItem = true;
     System.out.println("");
     System.out.println("You look around and find some climbing gear. This could be useful.");
     System.out.println("What would you like to do?");
     }
   String userinput13 = input.nextLine();
   if (userinput13.equals( "use climbing gear")){
+    current_location.locnum = 5;
+    current_inventory.c_gear.usedItem = true;
+    current_location.puz3 = true;
     System.out.println("");
     System.out.println("You make it halfway up the mountain before you find a proper path");
     System.out.println("and decide to take a break. What would you like to do?");
     }
   String userinput14 = input.nextLine();
   if (userinput14.equals( "search")){
+    current_inventory.rocks.haveItem = true;
     System.out.println("");
     System.out.println("You find some rocks nearby. Better take them, just in case. What would");
     System.out.println("you like to do?");
     }
   String userinput15 = input.nextLine();
   if (userinput15.equals( "move forward")){
+    current_location.locnum = 6;
     System.out.println("");
     System.out.println("As you continue hiking up the mountain, you come across a cave. After");
     System.out.println("looking inside, you realize that the cave is a dead end, save for a small");
@@ -166,18 +187,22 @@ public static void printStory() {
     }
   String userinput16 = input.nextLine();
   if (userinput16.equals( "search")){
+    current_inventory.lighter.haveItem = true;
     System.out.print("");
     System.out.println("You find a lighter on the floor of the cave that, amazingly, still has");
     System.out.println("some fluid left in it. What would you like to do?");
     }
   String userinput17 = input.nextLine();
   if (userinput17.equals( "use lighter")){
+    current_inventory.lighter.usedItem = true;
+    current_location.puz4 = true;
     System.out.print("");
     System.out.println("You light the brasier and a stone rolls back in the rear of the cave,");
     System.out.println("revealing a second room within the tunnel. What would you like to do?");
     }
   String userinput18 = input.nextLine();
   if (userinput18.equals( "move forward")){
+    current_location.locnum = 7;
     System.out.print("");
     System.out.println("Standing inside the large cavern, you can see plants sprouting up across");
     System.out.println("the room, as well as a huge amount of moss growing on the sides of the");
@@ -185,6 +210,7 @@ public static void printStory() {
     }
   String userinput19 = input.nextLine();
   if (userinput19.equals( "search")){
+    current_inventory.leaves.haveItem = true;
     System.out.print("");
     System.out.println("You find a pile of dry leaves in the center of the room. You decide to");
     System.out.println("shove some in your pockets and save them for later. What would you like");
@@ -192,6 +218,7 @@ public static void printStory() {
     }
   String userinput20 = input.nextLine();
   if (userinput20.equals( "move forward")){
+    current_location.locnum = 8;
     System.out.print("");
     System.out.println("You exit the large cavern and make your way into a smaller passage off");
     System.out.println("to the side. As you step in, you can see light shining in from the");
@@ -199,12 +226,14 @@ public static void printStory() {
     }
   String userinput21 = input.nextLine();
   if (userinput21.equals( "search")){
+    current_inventory.flint.haveItem = true;
     System.out.print("");
     System.out.println("You fint some flint along the sides of the cave. You take some, thinking");
     System.out.println("it might be useful. What would you like to do?");
     }
   String userinput22 = input.nextLine();
   if (userinput22.equals( "move forward")){
+    current_location.locnum = 9;
     System.out.print("");
     System.out.println("You leave the cave and climb the remaining way up the mountain. You");
     System.out.println("manage to make it to the summit and rest for a while, enjoying the");
@@ -212,6 +241,7 @@ public static void printStory() {
     }
   String userinput23 = input.nextLine();
   if (userinput23.equals( "search")){
+    current_inventory.harness.haveItem = true;
     System.out.print("");
     System.out.println("You notice a zipline here at the summit that leads back to the beach.");
     System.out.println("You quickly manage to find a harness and are ready for departure. What");
@@ -219,6 +249,8 @@ public static void printStory() {
     }
   String userinput24 = input.nextLine();
   if (userinput24.equals( "use harness")){
+    current_location.locnum = 10;
+    current_inventory.harness.usedItem = true;
     System.out.print("");
     System.out.println("You zipline down the mountain, and before you know it, you're back");
     System.out.println("where you started. You realize you sill need to find a way to get off");
@@ -226,6 +258,12 @@ public static void printStory() {
     }
   String userinput25 = input.nextLine();
   if (userinput25.equals( "use fire")){
+    current_inventory.monacle.usedItem = true;
+    current_inventory.rocks.usedItem = true;
+    current_inventory.leaves.usedItem = true;
+    current_inventory.flint.usedItem = true;
+    current_location.puz5 = true;
+    current_inventory.fire.haveItem = true;
     System.out.println("");
     System.out.println("As you look at your gathered materials from your journey, you realize that");
     System.out.println("you could make a fire with what you have collected on your journey. After");
@@ -248,146 +286,4 @@ public static void help() {
     System.out.println("help - brings up the list of commands that the player can use.");
     }
   }
-    /**
-  * Location
-  * 
-  * This class stores all of the locations and puzzle
-  *  variables for the game.
-  */
-  
-public class Location {
-  int beach;
-  int jun_o;
-  int jun_i;
-  int mtn_b;
-  int mtn_h;
-  int mtn_c1;
-  int mtn_c2;
-  int mtn_c3;
-  int mtn_s;
-  int shore;
-  boolean puz1;
-  boolean puz2;
-  boolean puz3;
-  boolean puz4;
-  boolean puz5;
-		
-  public void beach() {
-	    int locnum = 1;
-		boolean havePuz = false;
-		}
-	  public void jun_o() {
-		int locnum = 2;
-		boolean havePuz = true;
-		}
-	  public void jun_i() {
-		int locnum = 3;
-		boolean havePuz = true;
-		}
-	  public void mtn_b() {
-		int locnum = 4;
-		boolean havePuz = true;
-		}
-	  public void mtn_h() {
-		int locnum = 5;
-		boolean havePuz = false;
-		}
-	  public void mtn_c1() {
-		int locnum = 6;
-		boolean havePuz = true;
-		}
-	  public void mtn_c2() {
-		int locnum = 7;
-		boolean havePuz = false;
-		}
-	  public void mtn_c3() {
-		int locnum = 8;
-		boolean havePuz = false;
-		}
-	  public void mtn_s() {
-		int locnum = 9;
-		boolean havePuz = false;
-		}
-	  public void shore() {
-		int locnum = 10;
-		boolean havePuz = true;
-		}
-	  public void puz1() {
-		boolean puzSolved = false;
-		}
-	  public void puz2() {
-		boolean puzSolved = false;
-		}
-	  public void puz3() {
-		boolean puzSolved = false;
-		}
-	  public void puz4() {
-		boolean puzSolved = false;
-		}
-	  public void puz5() {
-		boolean puzSolved = false;
-		}
-	}
 }
-
-  /**
-  * Inventory
-  * 
-  * This class stores all of the inventory
-  * variables for the gaame.
-  */
-
-public class Inventory {
-	{
-	  boolean machetti;
-	  boolean monacle;
-	  boolean twine;
-	  boolean c_gear;
-	  boolean rocks;
-      boolean lighter;
-	  boolean leaves;
-	  boolean flint;
-	  boolean harness;
-	  boolean fire;
-	  }
-	public void machetti() {
-	  boolean haveItem = false;
-	  boolean usedItem = false;
-	  }
-	public void monacle() {
-	  boolean haveItem = false;
-	  boolean usedItem = false;
-	  }
-	public void twine() {
-	  boolean haveItem = false;
-	  boolean usedItem = false;
-	  }
-	public void c_gear() {
-      boolean haveItem = false;
-	  boolean usedItem = false;
-	  }
-	public void rocks() {
-	  boolean haveItem = false;
-	  boolean usedItem = false;
-	  }
-	public void lighter() {
-	  boolean haveItem = false;
-	  boolean usedItem = false;
-	  }
-	public void leaves() {
-      boolean haveItem = false;
-	  boolean usedItem = false;
-	  }
-	public void flint() {
-	  boolean haveItem = false;
-	  boolean usedItem = false;
-	  }
-	public void harness() {
-	  boolean haveItem = false;
-	  boolean usedItem = false;
-	  }
-	public void fire() {
-	  boolean haveItem = false;
-	  boolean usedItem = false;
-	  }
-	}
