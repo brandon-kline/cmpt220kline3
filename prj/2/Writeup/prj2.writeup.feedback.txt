@@ -1,0 +1,16 @@
+37 pts
+
+The project attempts to make a text-based adventure game. 
+The idea has good merit. 
+
+However, there are some issues...
+Writeup:
+- It does not follow the structure required. Abstract, Introduction, etc. -1pt
+
+Code:
+- You are using tabs. -1pt
+
+- There is incorrect indentation. -1pt
+
+Overall:
+- Decent work below average of an SD1 student.
